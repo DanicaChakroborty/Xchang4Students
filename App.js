@@ -1,3 +1,7 @@
+/*
+* This is where the local storage part is - there's comments above the sections that address it
+*/
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import BuyersHub from './BuyersHub';
@@ -9,7 +13,7 @@ import './App.css';
 function App() {
   const [items, setItems] = useState([]);
 
-  // Load items from localStorage when app starts
+  // Loads items from localStorage when app starts
   useEffect(() => {
     const storedItems = localStorage.getItem('items');
     if (storedItems) {
@@ -17,7 +21,7 @@ function App() {
     }
   }, []);
 
-  // Save items to localStorage every time they change
+  // Saves items to localStorage every time they change
   useEffect(() => {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
